@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ScrollPane?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml"
+            prefHeight="881.0"
+            prefWidth="800.0"
+            fx:controller="com.example.wings2.LecturerController">
+    <content>
+        <AnchorPane prefHeight="1000.0" prefWidth="800.0">
+            <children>
+                <Label layoutX="20.0" layoutY="20.0" text="Faculty: INFORMATION AND COMMUNICATION TECHNOLOGY" />
+                <Label layoutX="20.0" layoutY="40.0" text="Date of Term (From/To): Aug-24" />
+
+                <Label layoutX="529.0" layoutY="119.0" text="Module Code &amp; Title:" />
+                <ComboBox fx:id="moduleComboBox" layoutX="697.0" layoutY="117.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="DIWA2210" />
+                            <String fx:value="DIWA2211" />
+                            <String fx:value="DIWA2212" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label layoutX="20.0" layoutY="119.0" text="Select Class:" />
+                <ComboBox fx:id="classComboBox" layoutX="200.0" layoutY="117.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Class A" />
+                            <String fx:value="Class B" />
+                            <String fx:value="Class C" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label layoutX="20.0" layoutY="160.0" text="Chapter/Topic:" />
+                <TextField fx:id="topicTextField" layoutX="200.0" layoutY="161.0" />
+
+                <Label layoutX="20.0" layoutY="209.0" text="Learning Outcomes:" />
+                <TextArea fx:id="outcomesTextArea" layoutX="200.0" layoutY="206.0" prefHeight="60.0" prefWidth="600.0" />
+
+                <Label layoutX="20.0" layoutY="286.0" text="Challenges Faced:" />
+                <TextArea fx:id="challengesTextArea" layoutX="200.0" layoutY="285.0" prefHeight="60.0" prefWidth="600.0" />
+
+                <Label layoutX="20.0" layoutY="368.0" text="Recommendations:" />
+                <TextArea fx:id="recommendationsTextArea" layoutX="200.0" layoutY="367.0" prefHeight="60.0" prefWidth="600.0" />
+
+                <Label layoutX="20.0" layoutY="450.0" text="Students Attended:" />
+                <TextField fx:id="attendedStudentsField" layoutX="200.0" layoutY="446.0" />
+
+                <Label layoutX="20.0" layoutY="497.0" text="Students Who Didn't Attend:" />
+                <TextField fx:id="didNotAttendField" layoutX="200.0" layoutY="491.0" />
+
+                <Label layoutX="20.0" layoutY="538.0" text="Attendance Level:" />
+                <TextField fx:id="attendanceLevelField" layoutX="200.0" layoutY="534.0" />
+
+                <Label layoutX="20.0" layoutY="578.0" text="All Students Registered:" />
+                <CheckBox fx:id="allRegisteredCheckBox" layoutX="200.0" layoutY="579.0" />
+
+                <Label layoutX="20.0" layoutY="620.0" text="Lecturer from Outside LUCT?" />
+                <ComboBox fx:id="guestLecturerComboBox" layoutX="200.0" layoutY="615.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Yes" />
+                            <String fx:value="No" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label layoutX="20.0" layoutY="666.0" text="Having a Guest Lecturer?" />
+                <ComboBox fx:id="planningGuestLecturerComboBox" layoutX="200.0" layoutY="660.0">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Yes" />
+                            <String fx:value="No" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label layoutX="20.0" layoutY="706.0" text="Topic for Guest Lecturer:" />
+                <TextField fx:id="guestLecturerTopicField" layoutX="200.0" layoutY="702.0" />
+
+                <Label layoutX="20.0" layoutY="752.0" text="List of Students:" />
+                <TextArea fx:id="studentsListArea" layoutX="200.0" layoutY="751.0" prefHeight="60.0" prefWidth="600.0" editable="false" />
+
+                <Button layoutX="200.0" layoutY="831.0" onAction="#handleSubmitReport" text="Submit Report" />
+                <Button layoutX="350.0" layoutY="830.0" onAction="#handleLogout" text="Logout" />
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>

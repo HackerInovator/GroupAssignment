@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="2940.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wings2.AdminController">
+    <children>
+        <ScrollPane fitToWidth="true" hbarPolicy="AS_NEEDED" layoutY="48.0" prefHeight="2914.0" prefWidth="687.0" style="-fx-background-color: #f0f4f7;" vbarPolicy="AS_NEEDED">
+            <VBox prefHeight="900" spacing="10" style="-fx-background-color: #ffffff;">
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e81004;" text="Admin Panel" />
+
+                <!-- Admin Profile Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Admin Profile">
+                    <VBox spacing="10">
+                        <Label fx:id="adminProfileLabel" style="-fx-font-size: 16px; -fx-text-fill: #34495E;" text="Welcome, Admin!" />
+                        <Button onAction="#viewProfile" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="View Profile" />
+                        <Button onAction="#viewAllLecturers" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="View All Lecturers" />
+                        <Button onAction="#viewAllModules" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="View All Modules" />
+                        <Button onAction="#viewAllSemesters" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="View All Semesters" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Add New Lecturer Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Add New Lecturer">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Username:" />
+                        <TextField fx:id="lecturerUsernameField" promptText="Enter Username" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Lecturer Name:" />
+                        <TextField fx:id="lecturerNameField" promptText="Enter Lecturer Name" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Lecturer Surname:" />
+                        <TextField fx:id="lecturerSurnameField" promptText="Enter Lecturer Surname" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Email:" />
+                        <TextField fx:id="lecturerEmailField" promptText="Enter Email" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Address:" />
+                        <TextField fx:id="lecturerAddressField" promptText="Enter Address" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Employee Number:" />
+                        <TextField fx:id="employeeNumberField" promptText="Enter Employee Number" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addLecturer" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Lecturer" />
+                        <Label fx:id="addErrorLabel" textFill="red" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Assign Role to Lecturer Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Assign Role to Lecturer">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Select Lecturer:" />
+                        <ComboBox fx:id="lecturerRoleComboBox" prefWidth="648.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="New Role:" />
+                        <TextField fx:id="newRoleField" promptText="Enter New Role" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#assignRole" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Assign Role" />
+                        <Label fx:id="roleAssignErrorLabel" textFill="red" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Assign Module to Lecturer Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Assign Module to Lecturer">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Select Lecturer:" />
+                        <ComboBox fx:id="lecturerModuleComboBox" prefWidth="648.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Module:" />
+                        <TextField fx:id="moduleAssignField" promptText="Enter Module Name" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Class:" />
+                        <TextField fx:id="classAssignField" promptText="Enter Class" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Semester:" />
+                        <TextField fx:id="semesterAssignField" promptText="Enter Semester" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Academic Year:" />
+                        <TextField fx:id="academicYearAssignField" promptText="Enter Academic Year" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#assignModule" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Assign Module" />
+                        <Label fx:id="moduleAssignErrorLabel" textFill="red" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Add New Student Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Add New Student">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Student Name:" />
+                        <TextField fx:id="studentNameField" promptText="Enter Student Name" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Student Surname:" />
+                        <TextField fx:id="studentSurnameField" promptText="Enter Student Surname" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Student Number:" />
+                        <TextField fx:id="studentNumberField" promptText="Enter Student Number" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Email:" />
+                        <TextField fx:id="studentEmailField" promptText="Enter Email" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Label style="-fx-text-fill: #34495E;" text="Contacts:" />
+                        <TextField fx:id="studentContactsField" promptText="Enter Contacts" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addStudent" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Student" />
+                        <Label fx:id="addStudentErrorLabel" textFill="red" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Existing Lecturers Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Existing Lecturers">
+                    <VBox spacing="10">
+                        <ListView fx:id="lecturersListView" prefHeight="170.0" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- View All Students Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="View All Students">
+                    <VBox spacing="10">
+                        <Button onAction="#viewAllStudents" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="View All Students" />
+                        <Label fx:id="studentsListLabel" text="" wrapText="true" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Manage Academic Year Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Manage Academic Year">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Academic Year:" />
+                        <TextField fx:id="academicYearField" promptText="Enter Academic Year" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addAcademicYear" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Academic Year" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Manage Semester Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Manage Semester">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Semester:" />
+                        <TextField fx:id="semesterField" promptText="Enter Semester" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addSemester" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Semester" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Manage Module Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Manage Module">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Module:" />
+                        <TextField fx:id="moduleField" promptText="Enter Module" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addModule" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Module" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Manage Class Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="Manage Class">
+                    <VBox spacing="10">
+                        <Label style="-fx-text-fill: #34495E;" text="Class:" />
+                        <TextField fx:id="classField" promptText="Enter Class" style="-fx-background-color: #ecf0f1; -fx-border-color: #2980B9; -fx-border-radius: 5px;" />
+                        <Button onAction="#addClass" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Add Class" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- User Actions Section -->
+                <TitledPane style="-fx-background-color: #ffffff; -fx-border-color: #2980B9; -fx-border-radius: 5px;" text="User Actions">
+                    <VBox spacing="10">
+                        <Button onAction="#handleBack" style="-fx-background-color: #2980B9; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 15px; -fx-border-radius: 5px;" text="Back" />
+                    </VBox>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+    </children>
+</AnchorPane>

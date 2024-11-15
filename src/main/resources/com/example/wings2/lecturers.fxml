@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.wings2.LecturerController">
+
+    <VBox spacing="20">
+        <padding>
+            <Insets topRightBottomLeft="20.0" />
+        </padding>
+
+        <Label styleClass="header" text="Weekly Module Report">
+            <font>
+                <Font size="24" />
+            </font>
+        </Label>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="30" />
+                <ColumnConstraints percentWidth="70" />
+            </columnConstraints>
+
+            <Label text="Faculty:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="facultyField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Module Code &amp; Title:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="moduleCodeField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Class:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="classField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Lecturer's / Tutor's Name:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="lecturerField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Week / Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="weekField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Topic/Chapter:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="topicField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="Learning Outcome:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="learningOutcomeField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+            <Label text="Assessment's name:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <TextField fx:id="assessmentNameField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <Label text="Pass rate(%):" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <TextField fx:id="passRateField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+            <Label text="Challenges:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+            <TextField fx:id="challengesField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+            <Label text="Duration of class:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+            <TextField fx:id="durationField" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+            <Label text="Recommendations:" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+            <TextField fx:id="recommendationsField" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Students:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="studentsField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Absent students:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="absentStudentsField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Did you go to class on the scheduled day, or you arranged for a make-up class?" GridPane.rowIndex="2" />
+            <TextField fx:id="classAttendanceField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Levels of Student Attendance: How do you consider students' attendance? Is it satisfactory?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <TextField fx:id="attendanceLevelField" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Student Registrations per Programme: Are all your students registered? Did you follow up with those that claim to have registered?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <Label text="All students registered?" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="allStudentsRegisteredField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Yes" />
+                        <String fx:value="No" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Followed up on registrations?" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="followedUpRegistrationsField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Yes" />
+                        <String fx:value="No" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Industry Lectures &amp; Visits: Did you have any guest lecturer from outside LUCT? Are you planning to have any? On which topic?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <Label text="Had guest lecturer?" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="hadGuestLecturerField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Yes" />
+                        <String fx:value="No" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Planning guest lecturer?" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="planningGuestLecturerField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Yes" />
+                        <String fx:value="No" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <TextField fx:id="guestLecturerTopicField" promptText="Guest lecturer topic" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Identification of Students with Learning Needs: Are there any students with specific learning needs?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <TextField fx:id="studentsWithLearningNeedsField" promptText="Describe any students with specific learning needs" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Instances of Indiscipline: Have there been any instances of indiscipline in your class?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <TextField fx:id="instancesOfIndisciplineField" promptText="Describe any instances of indiscipline" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Student Achievements: Are you aware of any achievements by your students?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <TextField fx:id="studentAchievementsField" promptText="Describe any student achievements" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Label text="Alleged Instances of Assessment Malpractice: Have there been any instances of plagiarism in your assessments? What action did you take, and who were the students?" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+            <TextField fx:id="assessmentMalpracticeField" promptText="Describe any instances of assessment malpractice" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button onAction="#handleBack" text="Back" />
+            <Button onAction="#handleLogout" text="Logout" />
+            <Button onAction="#handleSaveReport" text="Save" />
+            <Button onAction="#handleSubmitReport" text="Submit" />
+        </HBox>
+
+    </VBox>
+</ScrollPane>
